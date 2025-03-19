@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: sans-serif;
+        }
+
+        /* Estilos del Gráfico (Ancho Fijo) */
+        #grafico {
+            width: 600px; /* Ancho fijo */
+            height: 200px;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+            background-color: #222;
+            position: relative;
+            overflow: hidden; /* Oculta las barras que se salen */
+        }
+
+        .barra {
+            position: absolute;
+            bottom: 0;
+            width: 12px; /* Ancho ajustado para 50 barras */
+            background-color: #4CAF50;
+            transition: height 0.1s ease, background-color 0.3s ease;
+        }
+
+        /* Estilos de la Tabla (sin cambios) */
+        #tabla-registros {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #tabla-registros th,
+        #tabla-registros td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #tabla-registros th {
+            background-color: #333;
+        }
+
+        #tabla-registros tbody tr:nth-child(odd) {
+            background-color: #222;
+        }
+
+        .latencia-alta {
+            background-color: rgba(244, 67, 54, 0.3);
+        }
+
+        .latencia-media {
+            background-color: rgba(255, 193, 7, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Monitor de Red (Gráfico Fijo + Tabla - Simulado)</h1>
+    <div id="grafico"></div>
+    <p>Latencia: <span id="latencia">N/A</span> ms</p>
+
+    <table id="tabla-registros">
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Latencia (ms)</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los datos se insertarán aquí -->
+        </tbody>
+    </table>
+
+    <script src="pingmicft.js"></script>
+</body>
+</html>
